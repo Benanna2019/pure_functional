@@ -14,4 +14,4 @@ node_modules
 .vinxi
 .vercel
 
-sampleData.*
+sampleData.jsonl
