@@ -41,7 +41,7 @@ const getWorkshopDetails = createServerFn({
     // const joinFilePath = files.filter((file) => file.includes(""));
 
     const filePath = path.join(
-      `content/workshops/${ctx.data.workshopId}/${ctx.data.sectionId}.md`,
+      `app/content/workshops/${ctx.data.workshopId}/${ctx.data.sectionId}.md`,
     );
 
     console.log(filePath);

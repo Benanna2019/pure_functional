@@ -16,6 +16,7 @@ export function getAllMarkdownFiles(dirPath: string): string[] {
   const files: string[] = [];
 
   const items = fs.readdirSync(dirPath);
+  console.log("items", items);
 
   items.forEach((item) => {
     const fullPath = path.join(dirPath, item);

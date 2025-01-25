@@ -28,7 +28,7 @@ import React from "react";
 const getWorkshopLessons = createServerFn({
   method: "GET",
 }).handler(async () => {
-  const files = getAllMarkdownFiles("content/workshops");
+  const files = getAllMarkdownFiles("app/content/workshops");
 
   const lessons = getPostsFromMarkdownFiles(files);
 

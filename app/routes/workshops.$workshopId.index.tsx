@@ -32,13 +32,15 @@ const getWorkshopDescription = createServerFn({
 })
   .validator((data: string) => data)
   .handler(async (ctx) => {
-    const files = fs.readdirSync(`content/workshops/${ctx.data}`);
+    const files = fs.readdirSync(`app/content/workshops/${ctx.data}`);
+
+    console.log("files", files);
 
     if (!files.includes("index.md")) {
       throw new Error(`Workshop ${ctx.data} does not have an index.md file`);
     }
 
-    const filePath = path.join(`content/workshops/${ctx.data}`, "index.md");
+    const filePath = path.join(`app/content/workshops/${ctx.data}`, "index.md");
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const { data, content } = matter(fileContent);
 
