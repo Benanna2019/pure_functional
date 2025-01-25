@@ -30,12 +30,12 @@ export interface Essay {
 const getEssays = createServerFn({
   method: "GET",
 }).handler(async () => {
-  const files = fs.readdirSync("content/posts");
+  const files = fs.readdirSync("app/content/posts");
 
   const posts = files
     .filter((file) => /\.md$/.test(file))
     .map((file) => {
-      const filePath = path.join("content/posts", file);
+      const filePath = path.join("app/content/posts", file);
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const { data, content } = matter(fileContent);
       const slug = file.replace(/\.md$/, "");
